@@ -1,19 +1,6 @@
 pipeline{
-    agent{ label "linux"}
+    agent{ dockerfile true}
     stages{
-        stage("build"){
-            steps{
-                sh """
-                    docker build -t test .
-                """
-            }
-        }
-        stage("run"){
-            steps{
-                sh """
-                    docker run --rm test
-                """
-            }
-        }
+        
     }
 }
