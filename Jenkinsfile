@@ -1,10 +1,14 @@
 pipeline{
-    agent { dockerfile true }
+    agent { label "linux" }
     stages{
         stage('Docker Build') {
-    	    agent any
             steps {
-      	        sh 'echo test'
+      	        sh 'docker build -t test .'
+            }
+        }
+        stage('Docker Run'){
+            steps{
+                sh 'docker run --rm test'
             }
         }
     }
