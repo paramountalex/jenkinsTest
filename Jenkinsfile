@@ -1,5 +1,5 @@
 pipeline{
-    agent { label "linux" }
+    agent { label "mac" }
     stages{
         stage('Docker Build') {
             steps {
