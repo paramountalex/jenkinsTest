@@ -1,10 +1,10 @@
 pipeline{
-    agent none
+    agent { dockerfile true }
     stages{
         stage('Docker Build') {
     	    agent any
             steps {
-      	        sh 'docker build -t shanem/spring-petclinic:latest .'
+      	        sh 'echo test'
             }
         }
     }
